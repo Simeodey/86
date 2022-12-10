@@ -5,6 +5,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const ul = document.querySelector("ul");
   const numbersArray = [1, 3, 4, 5, 6, 7];
   const isEven = (n) => n % 2 === 0;
-  const filteredArray = numbersArray.filter(isEven).map(el=>`<li>${el}</li>`)
-  ul.innerHTML = filteredArray.join('\n')
+  const filteredArray = numbersArray.filter(isEven).forEach(el=>{
+    const li = document.createElement('li')
+    li.innerText = el
+    ul.appendChild(li) })
+  
 });
